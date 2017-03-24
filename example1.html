@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="google" content="notranslate" />
+   	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+   	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TblSelectJs | Example1</title>
+	
+	<link href="http://code.jquery.com/ui/1.12.1/themes/cupertino/jquery-ui.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	<link href="example/example.css" rel="stylesheet">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+	<script src="TblSelect.js"></script>
+	
+	<script>
+	var tblSelect;
+	$(function(){
+		
+		tblSelect = new TblSelect({
+			'tbl_rap_slt':'#tbl_rap1',
+		});
+		
+	});
+	
+	function getData(){
+		var data = tblSelect.getData();
+
+		var json_str = JSON.stringify(data);
+		$('#res').html(json_str);
+		
+	}
+	
+	function doSelect(){
+		var v = [1,2,4];
+		tblSelect.doSelect(v);
+	}
+	
+	function showTblSelect(btnElm){
+		tblSelect.showTblSelect(btnElm);
+	}
+	</script>
+
+</head>
+<body>
+<div id="header" ><h1>TblSelectJs | Example1</h1></div>
+<div class="container">
+
+
+
+
+
+
+
+
+
+
+<a href="https://github.com/amaraimusi/TblSelectJs.git">GitHub</a><br>
+<br>
+
+<h2>Example 1</h2>
+
+
+<button id="btn1" class="btn btn-warning btn-sm" onclick="showTblSelect(this)">▼</button><br>
+Hello world!<br>
+<br>
+
+<div id="tbl_rap1" class="tbl2" >
+<table>
+	<tbody>
+	<tr>
+		<td>1<input type='hidden' name='value' value='1' /></td>
+		<td><span class='text'>cat</span></td>
+		<td>neko</td>
+	</tr>
+
+	<tr>
+		<td>2<input type='hidden' name='value' value='2' /></td>
+		<td><span class='text'>goat</span></td>
+		<td>yagi</td>
+	</tr>
+
+	<tr>
+		<td>3<input type='hidden' name='value' value='3' /></td>
+		<td><span class='text'>shark</span></td>
+		<td>same</td>
+	</tr>
+
+	<tr>
+		<td>4<input type='hidden' name='value' value='4' /></td>
+		<td><span class='text'>eagle</span></td>
+		<td>wasi</td>
+	</tr>
+
+	<tr>
+		<td><span class='value'>5</span></td>
+		<td><span class='text'>pig</span></td>
+		<td>buta</td>
+	</tr>
+	</tbody>
+</table>
+</div>
+
+<p>select</p>
+<input type="button" value="Selection" class="btn btn-success btn-xs" onclick="doSelect();" /><br>
+<br>
+
+
+<p>output</p>
+<input type="button" value="Get selected data" class="btn btn-success btn-xs" onclick="getData();" />
+<div id="res"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="yohaku"></div>
+</div><!-- content -->
+<div id="footer">(C) <a href="http://amaraimusi.sakura.ne.jp/" target="blank">kenji uehara</a> 2017-3-23</div>
+</body>
+</html>
